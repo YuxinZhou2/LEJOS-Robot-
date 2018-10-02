@@ -39,13 +39,17 @@ public class Lab3 {
       // spawn a new Thread to avoid Navigation.drive() from blocking
       (new Thread() {
         public void run() {
-        	//Defining thetrajectory
-        		int waypoints[][]= new int[][]{ { 0, 2 }, { 1, 1 }, { 2, 2 }, { 2, 1 }, { 1, 0 } };
+        	//Defining trajectories
+        		int test_map[][]= new int[][]{{2,1},{1,1},{1,2},{2,0}}; //map for lab report
+        		int map1[][]= new int[][] {{0,2},{1,1},{2,2},{2,1},{1,0}};
+        		int map2[][] = new int[][] {{1,1},{0,2},{2,2},{2,1},{1,0}};
+        		int map3[][] = new int[][] {{1,0},{2,1},{2,2},{0,2},{1,1}};
+        		int map4[][] = new int[][] {{0,1},{1,2},{1,0},{2,1},{2,2}};
         		Navigation navig = new Navigation(leftMotor, rightMotor, WHEEL_RAD, WHEEL_RAD, TRACK);
         		
-        	//Looping through all the waypoints
+        	//Looping through all the waypoints of a map
         		for(int i=0;i < 5;i++) {
-        			navig.driveTo(waypoints[i][0], waypoints[i][1]);
+        			navig.travelTo(test_map[i][0], test_map[i][1]);
         		}
         		
           

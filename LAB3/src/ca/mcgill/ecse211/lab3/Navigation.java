@@ -38,7 +38,7 @@ public class Navigation {
    * 
    * @param waypoints
    */
-  public void driveTo(double x, double y) {
+  public void travelTo(double x, double y) {
 	 double minimalT=0,distance=0;
 	 double currentX=0.0;
 	 double currentY=0.0;
@@ -77,7 +77,7 @@ public class Navigation {
 	}
 	
 	//Calling the rotate
-	rotate(minimalT);
+	turnTo(minimalT);
 	
 	leftMotor.setSpeed(FORWARD_SPEED);
     rightMotor.setSpeed(FORWARD_SPEED);
@@ -98,7 +98,7 @@ public class Navigation {
    * @param rightRadius
    * @param width
    */
-  public void rotate(double minimalT) {
+  public void turnTo(double minimalT) {
 	 //Calculating by how much we have to rotate with respect to our current angle
 	 double deltaT = 0;
 	 deltaT= minimalT - current_T;
